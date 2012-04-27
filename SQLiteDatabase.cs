@@ -74,6 +74,26 @@ namespace BattleForEurope
 				return rowsUpdated;
 			}
 		}
+		
+		/// <summary>
+		/// Allows the programmer to retrieve single items from the DB.
+		/// </summary>
+		/// <returns>
+		/// A string
+		/// </returns>
+		/// <param name='sql'>
+		/// The query to run
+		/// </param>
+		public string ExecuteScalar(string sql) {
+			using (var cnn = new SQLiteConnection(this.DBConnection)) {
+				cnn.Open();
+				SQLiteCommand myCommand = new SQLiteCommand(cnn);
+				myCommand.CommandText = sql;
+				object value = myCommand.ExecuteScalar();
+				return (value != null) ? value.ToString() : "";
+			}
+			
+		}
 	}
 }
 
