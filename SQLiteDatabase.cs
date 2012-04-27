@@ -27,7 +27,7 @@ using System;
 using System.Data.SQLite;
 using System.Data;
 
-namespace BattleForEurope
+namespace Com.Maadworks.BattleForEurope
 {
 	public class SQLiteDatabase
 	{
@@ -47,6 +47,15 @@ namespace BattleForEurope
 		}
 		
 		
+		/// <summary>
+		/// Gets the data table.
+		/// </summary>
+		/// <returns>
+		/// The data table.
+		/// </returns>
+		/// <param name='sql'>
+		/// Sql.
+		/// </param>
 		public DataTable GetDataTable(string sql) {
 			DataTable dt = new DataTable();
 			
@@ -65,6 +74,15 @@ namespace BattleForEurope
 				
 		}
 		
+		/// <summary>
+		/// Executes the non query.
+		/// </summary>
+		/// <returns>
+		/// The non query.
+		/// </returns>
+		/// <param name='sql'>
+		/// Sql.
+		/// </param>
 		public int ExecuteNonQuery(string sql) {
 			using (var cnn = new SQLiteConnection(this.DBConnection)) {
 				cnn.Open();

@@ -26,7 +26,7 @@
 
 using System;
 
-namespace BattleForEurope
+namespace Com.Maadworks.BattleForEurope
 {
 	public class World
 	{

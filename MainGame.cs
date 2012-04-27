@@ -33,7 +33,7 @@ using System.Data;
 using System.Data.Linq;
 
 
-namespace BattleForEurope
+namespace Com.Maadworks.BattleForEurope
 {
 	public class MainGame
 	{
