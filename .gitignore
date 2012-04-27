@@ -1,1 +1,6 @@
+#paths
 /bin
+
+#executables and project files
+*.csproj
+*.pidb
