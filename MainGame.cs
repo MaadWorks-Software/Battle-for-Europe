@@ -47,19 +47,19 @@ namespace Com.Maadworks.BattleForEurope
 			DataTable dt = gameDB.GetDataTable("SELECT * FROM Players");
 			
 			
-			
-			foreach (DataRow player in dt.Rows) {
-				Console.WriteLine(player["PLAYER_ID"].ToString());
-				Console.WriteLine(player["PLAYER_FIRSTNAME"].ToString());
-			}
-			
-			
-			
-			Dictionary<string, string> data = new Dictionary<string, string>();
-			bool result = db.Delete("Players", "PLAYER_FIRSTNAME = 'Bob'");
-			if (result)
-				Console.WriteLine("Deleted!");
-			
+//			
+//			foreach (DataRow player in dt.Rows) {
+//				Console.WriteLine(player["PLAYER_ID"].ToString());
+//				Console.WriteLine(player["PLAYER_FIRSTNAME"].ToString());
+//			}
+//			
+//			
+//			
+//			Dictionary<string, string> data = new Dictionary<string, string>();
+//			bool result = db.Delete("Players", "PLAYER_FIRSTNAME = 'Bob'");
+//			if (result)
+//				Console.WriteLine("Deleted!");
+//			
 //			data.Add("PLAYER_HIGHSCORE", "300");
 //			data.Add("PLAYER_FIRSTNAME", "Bob");
 //			try 
