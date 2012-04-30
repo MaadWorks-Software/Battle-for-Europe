@@ -37,11 +37,14 @@ namespace Com.Maadworks.BattleForEurope
 {
 	public class MainGame
 	{
+		public static SQLiteDatabase gameDB = new SQLiteDatabase();
+		
+		
 		public MainGame ()
 		{
 			Surface sfcMain = Video.SetVideoMode(1024,768);
-			SQLiteDatabase db = new SQLiteDatabase();
-			DataTable dt = db.GetDataTable("SELECT * FROM Players");
+			
+			DataTable dt = gameDB.GetDataTable("SELECT * FROM Players");
 			
 			
 			
@@ -49,9 +52,66 @@ namespace Com.Maadworks.BattleForEurope
 				Console.WriteLine(player["PLAYER_ID"].ToString());
 				Console.WriteLine(player["PLAYER_FIRSTNAME"].ToString());
 			}
+			
+			
+			
+			Dictionary<string, string> data = new Dictionary<string, string>();
+			bool result = db.Delete("Players", "PLAYER_FIRSTNAME = 'Bob'");
+			if (result)
+				Console.WriteLine("Deleted!");
+			
+//			data.Add("PLAYER_HIGHSCORE", "300");
+//			data.Add("PLAYER_FIRSTNAME", "Bob");
+//			try 
+//			{
+//				db.Insert("Players", data);
+//				
+//			}
+//			catch (Exception crap) 
+//			{
+//				Console.WriteLine(crap.Message);
+//			}	
+			
+			Events.Quit += new EventHandler<QuitEventArgs>(Events_Quit);
+			Events.Tick += new EventHandler<TickEventArgs>(Events_Tick);
+			Events.KeyboardUp += new EventHandler<KeyboardEventArgs>(Events_KeyboardUp);
+
+			Events.Run();
 		}
 		
+		public static void Events_quit(object sender, QuitEventArgs e)
+		{
+			
+		}
 		
+		public static void Events_Tick(object sender, TickEventArgs e)
+		{
+			
+		}
+		
+		public static void Events_KeyboardUp(object sender, KeyboardEventArgs e)
+		{
+			
+		}
+		
+		/// <summary>
+		/// Update with the specified gameTime.
+		/// </summary>
+		/// <param name='gameTime'>
+		/// Game time.
+		/// </param>
+		public void Update()
+		{
+			
+		}
+	
+		/// <summary>
+		/// Draw this instance.
+		/// </summary>
+		public void Draw() 
+		{
+			
+		}
 		
 	}
 }
