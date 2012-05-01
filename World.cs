@@ -25,6 +25,11 @@
 // THE SOFTWARE.
 
 using System;
+using SdlDotNet.Core;
+using SdlDotNet.Graphics;
+using SdlDotNet.Input;
+using System.Drawing;
+using System.Collections.Generic;
 
 namespace Com.Maadworks.BattleForEurope
 {
@@ -36,7 +41,10 @@ namespace Com.Maadworks.BattleForEurope
 		
 		public void Update(int gametime){}
 		
-		public void Draw() {}
+		public void Draw() 
+		{
+			
+		}
 		
 		
 	}
