@@ -45,6 +45,10 @@ namespace Com.Maadworks.BattleForEurope
 		{
 			Surface sfcMain = Video.SetVideoMode(1024,768);
 			
+			Surface score = GameFont.Render("Working on new Game", Color.Black);
+			
+			sfcMain.Blit(score);
+			
 			DataTable dt = gameDB.GetDataTable("SELECT * FROM Players");
 			
 			
