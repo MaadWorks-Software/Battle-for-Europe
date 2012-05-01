@@ -1,3 +1,4 @@
 #Battle for Europe#
 ___
-New game
+This is a turn based strategy game. It is platoon to battalion sizes of units.
+
