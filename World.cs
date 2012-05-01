@@ -39,12 +39,20 @@ namespace Com.Maadworks.BattleForEurope
 		{
 		}
 		
-		public void Update(int gametime){}
+		/// <summary>
+		/// Updates the logic of the world
+		/// </summary>
+		/// <param name='gametime'>
+		/// Gametime.
+		/// </param>
+		public virtual void Update(int gametime){}
 		
-		public void Draw() 
-		{
+		/// <summary>
+		/// Draws the graphics of the world
+		/// </summary>
+		public virtual void Draw(){}
 			
-		}
+		
 		
 		
 	}
