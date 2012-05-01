@@ -50,7 +50,7 @@ namespace Com.Maadworks.BattleForEurope
 		/// <summary>
 		/// Draws the graphics of the world
 		/// </summary>
-		public virtual void Draw(){}
+		public virtual void Draw(Surface mainWindow){}
 			
 		
 		
