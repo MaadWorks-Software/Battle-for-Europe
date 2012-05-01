@@ -33,6 +33,12 @@ namespace Com.Maadworks.BattleForEurope
 		public World ()
 		{
 		}
+		
+		public void Update(int gametime){}
+		
+		public void Draw() {}
+		
+		
 	}
 }
 
