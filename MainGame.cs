@@ -80,7 +80,7 @@ namespace Com.Maadworks.BattleForEurope
 //				Console.WriteLine(crap.Message);
 //			}	
 			
-			world = new World();
+			world = new World1();
 			
 			
 			Events.Quit += new EventHandler<QuitEventArgs>(Events_Quit);
