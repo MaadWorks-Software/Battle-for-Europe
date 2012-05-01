@@ -24,6 +24,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using SdlDotNet.Core;
+using SdlDotNet.Graphics;
+using SdlDotNet.Input;
+using SdlDotNet.Audio;
+using System.Drawing;
+using System.Collections.Generic;
 
 namespace Com.Maadworks.BattleForEurope
 {
@@ -36,14 +42,17 @@ namespace Com.Maadworks.BattleForEurope
 			
 		}
 		
-		public override void Draw ()
+		public override void Draw (Surface mainWindow)
 		{
-			base.Draw ();
+			base.Draw (mainWindow);
+			mainWindow.Blit(Contents.mapAssests[0], new Point(0,0), new Rectangle(0,1000, 1024, 768));   // add map to main window
 		}
 		
 		public override void Update (int gametime)
 		{
-			base.Update (gametime);
+			base.Update(gametime);
+			
+				
 		}
 	}
 }
