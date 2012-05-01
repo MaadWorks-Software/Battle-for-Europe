@@ -38,6 +38,7 @@ namespace Com.Maadworks.BattleForEurope
 	public class MainGame
 	{
 		public static SQLiteDatabase gameDB = new SQLiteDatabase();
+		private static World world;											// the current world.
 		
 		
 		public MainGame ()
@@ -72,6 +73,9 @@ namespace Com.Maadworks.BattleForEurope
 //				Console.WriteLine(crap.Message);
 //			}	
 			
+			world = new World();
+			
+			
 			Events.Quit += new EventHandler<QuitEventArgs>(Events_Quit);
 			Events.Tick += new EventHandler<TickEventArgs>(Events_Tick);
 			Events.KeyboardUp += new EventHandler<KeyboardEventArgs>(Events_KeyboardUp);
@@ -104,7 +108,7 @@ namespace Com.Maadworks.BattleForEurope
 		/// </param>
 		public static void Events_Tick(object sender, TickEventArgs e)
 		{
-			
+		
 		}
 		
 		/// <summary>
@@ -129,7 +133,11 @@ namespace Com.Maadworks.BattleForEurope
 		/// </param>
 		public void Update()
 		{
+			// set the gameTime to current time
+			int gameTime = Timer.TicksElapsed;
 			
+			// update the current world
+			world.Update(gameTime);
 		}
 	
 		/// <summary>
@@ -137,7 +145,8 @@ namespace Com.Maadworks.BattleForEurope
 		/// </summary>
 		public void Draw() 
 		{
-			
+			// draw the world
+			world.Draw();
 		}
 		
 	}
