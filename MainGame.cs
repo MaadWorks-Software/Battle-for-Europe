@@ -45,9 +45,12 @@ namespace Com.Maadworks.BattleForEurope
 		{
 			Surface sfcMain = Video.SetVideoMode(1024,768);
 			
-			Surface score = GameFont.Render("Working on new Game", Color.Black);
 			
-			sfcMain.Blit(score);
+			Surface score = Contents.GameFont.Render("Battle for Europe", Color.White);
+			
+			sfcMain.Blit(score, new Point(1024/4, 768/2));
+			sfcMain.Update();
+			
 			
 			DataTable dt = gameDB.GetDataTable("SELECT * FROM Players");
 			
@@ -96,7 +99,7 @@ namespace Com.Maadworks.BattleForEurope
 		/// <param name='e'>
 		/// E.
 		/// </param>
-		public static void Events_quit(object sender, QuitEventArgs e)
+		public static void Events_Quit(object sender, QuitEventArgs e)
 		{
 			Events.QuitApplication();
 		}
