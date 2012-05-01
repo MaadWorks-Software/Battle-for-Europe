@@ -27,10 +27,23 @@ using System;
 
 namespace Com.Maadworks.BattleForEurope
 {
-	public class World1
+	public class World1 : World
 	{
 		public World1 ()
 		{
+			
+			
+			
+		}
+		
+		public override void Draw ()
+		{
+			base.Draw ();
+		}
+		
+		public override void Update (int gametime)
+		{
+			base.Update (gametime);
 		}
 	}
 }
