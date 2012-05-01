@@ -43,6 +43,8 @@ namespace BattleForEurope
 		public static Dictionary<string, Music> musicAssests = new Dictionary<string, Music>();
 		public static List<Surface> mapAssests = new List<Surface>();
 		
+		public SdlDotNet.Graphics.Font GameFont = new SdlDotNet.Graphics.Font("media/freesans.ttf", 32); // font for game
+		
 		public static bool LoadAssests() {
 			
 		}
