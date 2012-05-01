@@ -46,6 +46,9 @@ namespace Com.Maadworks.BattleForEurope
 		public static SdlDotNet.Graphics.Font GameFont = new SdlDotNet.Graphics.Font("media/freesans.ttf", 32); // font for game
 		
 		public static bool LoadAssests() {
+			
+			mapAssests.Add(new Surface("media/map_beach1.png"));
+			
 			return true;
 		}
 	}
