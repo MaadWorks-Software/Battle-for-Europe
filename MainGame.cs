@@ -79,16 +79,43 @@ namespace Com.Maadworks.BattleForEurope
 			Events.Run();
 		}
 		
+		/// <summary>
+		/// Events_quit the specified sender and e.
+		/// </summary>
+		/// <param name='sender'>
+		/// Sender.
+		/// </param>
+		/// <param name='e'>
+		/// E.
+		/// </param>
 		public static void Events_quit(object sender, QuitEventArgs e)
 		{
-			
+			Events.QuitApplication();
 		}
 		
+		/// <summary>
+		/// Events_s the tick.
+		/// </summary>
+		/// <param name='sender'>
+		/// Sender.
+		/// </param>
+		/// <param name='e'>
+		/// E.
+		/// </param>
 		public static void Events_Tick(object sender, TickEventArgs e)
 		{
 			
 		}
 		
+		/// <summary>
+		/// Events_s the keyboard up.
+		/// </summary>
+		/// <param name='sender'>
+		/// Sender.
+		/// </param>
+		/// <param name='e'>
+		/// E.
+		/// </param>
 		public static void Events_KeyboardUp(object sender, KeyboardEventArgs e)
 		{
 			
