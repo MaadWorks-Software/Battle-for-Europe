@@ -39,17 +39,14 @@ namespace Com.Maadworks.BattleForEurope
 	{
 		public static SQLiteDatabase gameDB = new SQLiteDatabase();
 		private static World world;											// the current world.
-		
+		private static Surface sfcMain;
 		
 		public MainGame ()
 		{
-			Surface sfcMain = Video.SetVideoMode(1024,768);
+			sfcMain = Video.SetVideoMode(1024,768);
+			Contents.LoadAssests();									// Load all the media
 			
 			
-			Surface score = Contents.GameFont.Render("Battle for Europe", Color.White);
-			
-			sfcMain.Blit(score, new Point(1024/4, 768/2));
-			sfcMain.Update();
 			
 			
 			DataTable dt = gameDB.GetDataTable("SELECT * FROM Players");
@@ -99,7 +96,7 @@ namespace Com.Maadworks.BattleForEurope
 		/// <param name='e'>
 		/// E.
 		/// </param>
-		public static void Events_Quit(object sender, QuitEventArgs e)
+		public void Events_Quit(object sender, QuitEventArgs e)
 		{
 			Events.QuitApplication();
 		}
@@ -113,9 +110,11 @@ namespace Com.Maadworks.BattleForEurope
 		/// <param name='e'>
 		/// E.
 		/// </param>
-		public static void Events_Tick(object sender, TickEventArgs e)
+		public void Events_Tick(object sender, TickEventArgs e)
 		{
-		
+			
+			this.Update();   // update logic
+			this.Draw();	 //  update graphics
 		}
 		
 		/// <summary>
@@ -127,7 +126,7 @@ namespace Com.Maadworks.BattleForEurope
 		/// <param name='e'>
 		/// E.
 		/// </param>
-		public static void Events_KeyboardUp(object sender, KeyboardEventArgs e)
+		public void Events_KeyboardUp(object sender, KeyboardEventArgs e)
 		{
 			
 		}
@@ -145,6 +144,7 @@ namespace Com.Maadworks.BattleForEurope
 			
 			// update the current world
 			world.Update(gameTime);
+			
 		}
 	
 		/// <summary>
@@ -153,7 +153,10 @@ namespace Com.Maadworks.BattleForEurope
 		public void Draw() 
 		{
 			// draw the world
-			world.Draw();
+			world.Draw(sfcMain);
+			Surface score = Contents.GameFont.Render("Battle for Europe", Color.White);
+			sfcMain.Blit(score, new Point(1024/4, 768/2));
+			sfcMain.Update();
 		}
 		
 	}
